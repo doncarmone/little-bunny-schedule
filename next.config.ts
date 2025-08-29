@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: 'export',
+  basePath: '/little-bunny-schedule',
+  assetPrefix: '/little-bunny-schedule/'
 };
 
 export default nextConfig;
