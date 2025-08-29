@@ -6,10 +6,8 @@ const SCHEDULE_URL_GIST = `https://api.github.com/gists/14224d2a0b5913f8199aaf2d
 
 
 export const getSchedule = async (year: string) => {
-    console.log(`Fetching schedule for year: ${year}`);
     const schedule = await fetch(`${SCHEDULE_URL_GIST}`)
     const data = await schedule.json();
     const obj = JSON.parse(data.files["little-bunny-schedule-master-file.json"].content);
-    console.log(obj[year]);
     return obj[year] || [];
 };

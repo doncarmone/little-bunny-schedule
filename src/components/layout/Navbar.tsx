@@ -7,11 +7,14 @@ interface Props {
 
 export const Navbar = ({ title }: Props) => {
   return (
-    <nav className='navbar mb-12 shadow-lg bg-indigo-700 text-neutral-content'>
+    <nav className='navbar mb-12 shadow-lg bg-rosa text-neutral-content'>
       <div className='container mx-auto'>
         <div className='flex-none px-2 mx-2'>
           <Bunny />
-          <Link href='/' className='text-lg text-white font-bold align-middle'>
+          <Link
+            href='/'
+            className='text-lg text-slate-600 font-bold align-middle'
+          >
             {title}
           </Link>
         </div>

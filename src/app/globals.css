@@ -2,8 +2,14 @@
 @plugin "daisyui";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ffefff;
+  --foreground: #e8dae8;
+}
+
+@theme {
+  --color-azul: #bee0fe;
+  --color-rosa: #f7a8c8;
+  --color-verde: #c3edd9;
 }
 
 @theme inline {
@@ -15,8 +21,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #e8dae8;
+    --foreground: #ffefff;
   }
 }
 

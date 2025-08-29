@@ -17,11 +17,19 @@ export const getIsBefore = (date: string, finish: string): boolean => {
 export const resolveDate = (date: string, start: string, finish: string): boolean => {
     let times = 0;
 
-    if (getIsSame(date, start, finish)) times++;
-    if (getIsAfter(date, start)) times++;
-    if (getIsBefore(date, finish)) times++;
-
-    return times === 2;
+    if (getIsSame(date, start, finish)) {
+        times++;
+    }
+    if (getIsAfter(date, start)) {
+        times++;
+    }
+    if (getIsBefore(date, finish)) {
+        times++;
+    }
+    if (times === 2) {
+        return true;
+    }
+    return false;
 };
 
 export const getPrettyDate = (date: string): string => {
@@ -41,9 +49,7 @@ export const getShiftPretty = (shiftId: string): string => {
     }
 };
 
-// function getShiftObject(date) {
-//     // return schedules.find((s) => resolve(date, s.start, s.finish));
-// }
-// export const getShiftObject = (): Schedule {
-
-// }
+export const getShiftObject = (schedules: Schedule[] | undefined, date: string): Schedule | undefined => {
+    if (!schedules) return undefined;
+    return schedules.find((s) => resolveDate(date, s.start, s.finish));
+};
